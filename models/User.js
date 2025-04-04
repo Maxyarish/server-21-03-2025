@@ -3,20 +3,20 @@ const {Schema}= mongoose;
 const userSchema=new Schema({
     login:{
         type:String,
-        require:true,
+        required:true,
         trim:true,
         minLength:3,
         maxLength:15
     },
     email:{
         type:String,
-        require:true,
+        required:true,
         unique:true,
         trim:true,
     },
     isMale:{
         type:Boolean,
-        require:true,
+        required:true,
     },
     age:{
         type:Number,

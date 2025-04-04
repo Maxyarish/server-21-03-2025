@@ -1,18 +1,17 @@
 const express = require('express'); 
-const { createUser, findAllUsers, findUserById,updateUserById,deletedUserById} = require('./controllers/userController');
+const userRouter = require('./routes/user.router');
+const homeworkRouter = require('./routes/homework.router');
+const bookRouter=require('./routes/book.router');
 const app=express(); 
 
-app.use(express.json())
+app.use(express.json());
 
-app.post('/users',createUser)
-app.get('/users',findAllUsers)
-app.get('/users/:idUser',findUserById)
-app.patch('/users/:idUser',updateUserById)
-app.put('/users/:idUser',updateUserById)
-app.delete('/users/:idUser',deletedUserById)
+app.use('/users', userRouter)
+app.use('/homeworks',homeworkRouter);
+app.use('/books',bookRouter)
 
 app.use((err,res,req,next)=>{
-    console.log(err.message);
+    //console.log(err.message);
     res.status(500).send({errors:[err.message]})
 })
 

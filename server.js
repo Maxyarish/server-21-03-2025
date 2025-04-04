@@ -1,16 +1,11 @@
 const http=require('http'); //core modules
-const mongoose=require('mongoose'); //npm modules
+//const mongoose=require('mongoose'); npm modules
 const app=require('./app'); //local modules
+const connectDB = require('./Config/db');
 
-mongoose.connect('mongodb://127.0.0.1:27017/mongo_4').then(()=>{
-    console.log('mongodb connected successfully');
-    
-}).catch((err)=>{
-    console.log('mongodb connection failed');
-})
+connectDB();
 
 const server = http.createServer(app);
-
 const port =3001;
 
 server.listen(port,()=>{

@@ -1,0 +1,1 @@
+DELETE http://localhost:3001/books/67eab6ebddbaeb9eeef69809 HTTP/1.1;

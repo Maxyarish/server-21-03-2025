@@ -1,0 +1,1 @@
+DELETE http://localhost:3001/homeworks/67ed4950292d16df8553c6c3 HTTP/1.1;
